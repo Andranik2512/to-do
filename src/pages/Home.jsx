@@ -8,8 +8,9 @@ export default function Home(props) {
   const sign = () => {
     for (const i of Users) {
         
-      if (i.password === password && i.login === login) {
+      if (i.password === password && i.login === login ) {
           console.log(props);
+          
           props.history.push("/todos")
 
           return
