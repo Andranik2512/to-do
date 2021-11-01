@@ -1,7 +1,8 @@
 import Home from "./pages/Home";
-import "./App.css";
 import Todos from "./pages/todos";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+
+import "./App.css";
 
 function App() {
   return (
