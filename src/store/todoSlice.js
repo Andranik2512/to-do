@@ -8,6 +8,7 @@ const todoSlice = createSlice({
     reducers: {
         addTodo(state, action) {
             state.todos.push({
+                userid:sessionStorage.getItem('currentloggedin'),
                 id:new Date().toISOString(),
                 text: action.payload.text,
                 completed:false,
@@ -15,7 +16,7 @@ const todoSlice = createSlice({
               localStorage.setItem('todos',JSON.stringify([...state.todos]))
         },
         removeTodo(state, action) {
-            state.todos = state.todos.filter(todo => todo.id!==action.payload.id)
+            state.todos = state.todos.filter((todo) => todo.id!==action.payload.id)
             localStorage.setItem('todos', JSON.stringify([...state.todos]));
         },
         toggleTodoComplete(state, action) {
