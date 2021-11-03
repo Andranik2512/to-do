@@ -1,44 +1,45 @@
-import React from "react";
-import { useState } from "react";
-import {}from 'react-router-dom' 
-import Users from "../Users.json";
-
-
-
+import React from 'react';
+import { useState } from 'react';
+import {} from 'react-router-dom';
+import Users from '../Users.json';
 export default function Home(props) {
   const [login, setlogin] = useState('');
   const [password, setpassword] = useState('');
   const sign = () => {
     for (const i of Users) {
-        
-      if (i.password === password && i.login === login ) {
-          console.log(props);
-          
-          props.history.push("/todos")
-          sessionStorage.setitem('currentloggedin',i.id);
-          return
+      if (i.password === password && i.login === login) {
+        console.log(props);
+        props.history.push('/todos');
+        sessionStorage.setItem('currentloggedin', i.id);
+        return;
       }
     }
-    alert('Введите правильны логин или пароль')
+    alert('Введите правильны логин или пароль');
   };
 
   return (
     <form
-      onSubmit={(event ) => {
-          event.preventDefault();
-        sign()
+      onSubmit={(event) => {
+        event.preventDefault();
+        sign();
       }}
     >
       <div>
-        <input value={login} 
-        onChange={(event)=>{
-            setlogin(event.target.value)
-            }}/>
+        <input
+          value={login}
+          onChange={(event) => {
+            setlogin(event.target.value);
+          }}
+        />
       </div>
       <div>
-        <input value={password} onChange={(event)=>{
-           setpassword(event.target.value) 
-        }} type='password'/>
+        <input
+          value={password}
+          onChange={(event) => {
+            setpassword(event.target.value);
+          }}
+          type="password"
+        />
       </div>
       <button>sign in</button>
     </form>

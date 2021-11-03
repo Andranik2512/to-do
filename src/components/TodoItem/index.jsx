@@ -1,9 +1,11 @@
 import React from 'react'
 import {useDispatch} from 'react-redux';
 import {removeTodo, toggleTodoComplete} from '../../store/todoSlice'
-const TodoItem = ({id, text, completed, }) => {
-    const dispatch = useDispatch();
 
+const TodoItem = ({userid, id, text, completed, }) => {
+    const dispatch = useDispatch();
+    if(userid === sessionStorage.getItem('currentloggedin')){
+    
 console.log(completed);
     return (
         <li>
@@ -19,5 +21,6 @@ console.log(completed);
         </li>
     )
 }
-
+return null;
+}
 export default TodoItem
