@@ -15,7 +15,7 @@ export default function Home(props) {
           console.log(props);
           
           props.history.push("/todos")
-
+          sessionStorage.setitem('currentloggedin',i.id);
           return
       }
     }
