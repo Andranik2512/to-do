@@ -2,6 +2,9 @@ import Home from "./pages/Home";
 import Todos from "./pages/todos";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
+
+import {Button, } from '@mui/material'
+
 import "./App.css";
 
 function App() {
@@ -11,7 +14,11 @@ function App() {
       <nav>
           <ul>
             <li>
-              <Link to="/">Home</Link>
+              <Button 
+              variant="contained">
+                <Link className='under' to="/">Home </Link>
+              </Button>
+              
             </li>
           </ul>
         </nav>

@@ -3,13 +3,14 @@ import { useState } from 'react';
 import {} from 'react-router-dom';
 import Users from '../Users.json';
 
+import { TextField, } from "@mui/material";
+
 export default function Home(props) {
   const [login, setlogin] = useState('');
   const [password, setpassword] = useState('');
   const sign = () => {
     for (const i of Users) {
       if (i.password === password && i.login === login) {
-        console.log(props);
         props.history.push('/todos');
         sessionStorage.setItem('currentloggedin', i.id);
         return;
@@ -19,14 +20,18 @@ export default function Home(props) {
   };
 
   return (
-    <form
+    <form 
       onSubmit={(event) => {
         event.preventDefault();
         sign();
       }}
     >
       <div>
-        <input
+        <TextField
+        id="filled-basic" 
+        label="Required field" 
+        variant="filled"
+      
           value={login}
           onChange={(event) => {
             setlogin(event.target.value);
@@ -34,7 +39,11 @@ export default function Home(props) {
         />
       </div>
       <div>
-        <input
+        <TextField
+        id="filled-basic" 
+        label="Required field" 
+        variant="filled"
+          
           value={password}
           onChange={(event) => {
             setpassword(event.target.value);
