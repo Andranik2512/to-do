@@ -1,4 +1,4 @@
-import Home from "./pages/Home";
+import Home from "./pages/home/Home";
 import Todos from "./pages/todos";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
@@ -11,12 +11,12 @@ function App() {
   return (
     <Router>
       <div className="App">
-      <nav>
+      <nav> 
           <ul>
             <li>
               <Button 
               variant="contained">
-                <Link className='under' to="/">Home </Link>
+                <Link  className='under' to="/">Home </Link>
               </Button>
               
             </li>

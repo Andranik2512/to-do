@@ -2,6 +2,7 @@ import React from 'react'
 import {useDispatch} from 'react-redux';
 import {removeTodo, toggleTodoComplete} from '../../store/todoSlice'
 
+import DeleteIcon from '@mui/icons-material/Delete';
 
 const TodoItem = ({userid, id, text, completed, }) => {
     const dispatch = useDispatch();
@@ -18,7 +19,9 @@ console.log(completed);
            />
            <span>{text}</span>
            <span className='delete' onClick={()=> dispatch(removeTodo({id}))}>
-               &times;
+               <buttom>
+               <DeleteIcon /> 
+               </buttom>
            </span>   
         </li>
     )

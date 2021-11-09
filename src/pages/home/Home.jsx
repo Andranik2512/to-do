@@ -1,9 +1,12 @@
 import React from 'react';
 import { useState } from 'react';
 import {} from 'react-router-dom';
-import Users from '../Users.json';
+import Users from '../../Users.json';
 
-import { TextField, } from "@mui/material";
+import { TextField, Button} from "@mui/material";
+
+import './home.css'
+
 
 export default function Home(props) {
   const [login, setlogin] = useState('');
@@ -51,7 +54,13 @@ export default function Home(props) {
           type="password"
         />
       </div>
-      <button>Sign in</button>
+      <Button 
+      className="btn"
+      variant='contained' 
+      color='secondary' 
+      type="submit">
+        Sign in
+        </Button>
     </form>
   );
 }
