@@ -2,7 +2,8 @@ import React from 'react'
 import {useDispatch} from 'react-redux';
 import {removeTodo, toggleTodoComplete} from '../../store/todoSlice'
 
-import DeleteIcon from '@mui/icons-material/Delete';
+import DeleteForeverTwoToneIcon from '@mui/icons-material/DeleteForeverTwoTone';
+import ModeEditOutlineTwoToneIcon from '@mui/icons-material/ModeEditOutlineTwoTone';
 
 const TodoItem = ({userid, id, text, completed, }) => {
     const dispatch = useDispatch();
@@ -20,7 +21,10 @@ console.log(completed);
            <span>{text}</span>
            <span className='delete' onClick={()=> dispatch(removeTodo({id}))}>
                <buttom>
-               <DeleteIcon /> 
+               <DeleteForeverTwoToneIcon /> 
+               </buttom>
+               <buttom>
+               <ModeEditOutlineTwoToneIcon color="action"/> 
                </buttom>
            </span>   
         </li>
